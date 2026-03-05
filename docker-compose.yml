@@ -1,0 +1,11 @@
+services:
+  cloudns-updater:
+    build: .
+    image: cloudns-updater
+    container_name: cloudns-updater
+    restart: unless-stopped
+    environment:
+      CLOUDNS_DOMAIN: "yourdomain.com"       # substitua pelo seu domínio
+      CLOUDNS_TOKEN: "your-token-here"        # substitua pelo seu token
+      CLOUDNS_INTERVAL: "1800"               # intervalo em segundos (padrão: 30 min)
+      CLOUDNS_DNS_SERVER: "8.8.8.8"          # servidor DNS para resolução
